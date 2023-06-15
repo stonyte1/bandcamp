@@ -7,6 +7,12 @@ class Song(models.Model):
     title = models.CharField(_("title"), max_length=250)
     audio = models.FileField(_("audio"), upload_to='music/', blank=True, null=True)
     duration = models.CharField(_("duration"), max_length=5)
+    album = models.ForeignKey(
+        'Album',
+        verbose_name=_("album"),
+        on_delete=models.CASCADE,
+        related_name='songs'
+    )
     
     class Meta:
         verbose_name = _("song")
@@ -22,13 +28,7 @@ class Song(models.Model):
 class Album(models.Model):
     title = models.CharField(_("title"), max_length=250)
     cover = models.ImageField(_("cover"), upload_to='music/')
-    song = models.ForeignKey(
-        Song, 
-        verbose_name=_("song"), 
-        on_delete=models.CASCADE,
-        related_name='albums'
-        )
-    release_date = models.DateField(_("release_"), default=None)
+    release_date = models.DateField(_("release_date"), default=None)
     summary = models.TextField(_("summary"), blank=True, null=True)
     TYPE = (
         (0, 'None'),
@@ -36,9 +36,8 @@ class Album(models.Model):
         (2, 'EP'),
         (3, 'Album')
     )
-    realese_type = models.CharField(
+    realese_type = models.IntegerField(
         _("realese_type"), 
-        max_length=1,
         choices=TYPE,
         default=0
         )
