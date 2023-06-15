@@ -28,7 +28,20 @@ class Album(models.Model):
         on_delete=models.CASCADE,
         related_name='albums'
         )
+    release_date = models.DateField(_("release_"), default=None)
     summary = models.TextField(_("summary"), blank=True, null=True)
+    TYPE = (
+        (0, 'None'),
+        (1, 'Single'),
+        (2, 'EP'),
+        (3, 'Album')
+    )
+    realese_type = models.CharField(
+        _("realese_type"), 
+        max_length=1,
+        choices=TYPE,
+        default=0
+        )
     
     class Meta:
         verbose_name = _("album")
