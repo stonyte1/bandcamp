@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music | dargana</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">Merch</a></li>
+                <li><a href="#">Concert</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer>
+        <p>&copy; 2023 dargana. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
