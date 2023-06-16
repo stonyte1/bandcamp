@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<ul>
+{% for concert in concerts %}
+    <li>{% if concert.visible == True %}{{concert.date}} {{concert.city}} {{concert.venue}} {% if concert.ticket_status == 2 %}<a href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}{% endif %}</li>
+{% endfor %}
+</ul>
+{% endblock content %}
