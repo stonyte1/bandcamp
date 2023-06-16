@@ -2,6 +2,15 @@
 {% block title %}{{ album }} | {{ block.super }}{% endblock title %}
 {% block content %}
     <div class="album-detail">
-        
+        <h1>{{ album }}</h1>
+            <img src="{{ album.cover }}">
+        <ul>
+            <li>{{ album.release_date }} {{ album.release.type }}</li>
+            {% for song in  album.songs %}
+                <li>{{ song.title }}</li>
+                <li>{{ song.audio }}</li>
+                <li>{{ song.duration }}</li>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock content %}

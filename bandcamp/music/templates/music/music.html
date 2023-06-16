@@ -3,8 +3,10 @@
     {% for album in albums  %}  
         <section>
             <div class="album">
-                <img src="{{ album.cover.url }}">
-                <h3>{{ album.title }}</h3>
+                <a href="{% url 'album_detail' pk=album.pk %}">
+                        <img src="{{ album.cover.url }}">
+                        <h3>{{ album.title }}</h3>
+                </a>
             </div>
         </section>
     {% endfor %}
