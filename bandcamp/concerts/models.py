@@ -58,13 +58,12 @@ class Concert(models.Model):
         default=0,
         db_index=True
     )
-
     link = models.TextField(_("link"), max_length=500)
     visible = models.BooleanField(_("visible"), default=False)
 
     class Meta:
-        verbose_name = _("conert")
-        verbose_name_plural = _("conerts")
+        verbose_name = _("concert")
+        verbose_name_plural = _("concerts")
 
     def __str__(self):
         return f'{self.date}'
