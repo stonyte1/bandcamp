@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
+{% load concert_tags %}
 {% block content %}
+<p>Sum of Visible Concerts: {{ concerts|sum_visible }}</p>
+<p>sum of all concerts {{concerts.count}}</p>
+{% if concerts|sum_visible == 0  %}
+    <h2>There are no upcoming concerts !</h2>
+    <h3>Stay tunned</h3>
+{% else %}
 <ul>
 {% for concert in concerts %}
-    <li>{% if concert.visible == True %}{{concert.date}} {{concert.city}} {{concert.venue}} {% if concert.ticket_status == 2 %}<a href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}{% endif %}</li>
+    {% if concert.visible == True %}<li>{{concert.date}} {{concert.city}} {{concert.venue}} {% if concert.ticket_status == 2 %}<a href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</li>{% endif %}
 {% endfor %}
 </ul>
+{% endif %}
 {% endblock content %}
