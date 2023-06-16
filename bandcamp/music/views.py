@@ -14,4 +14,4 @@ class AlbumList(generic.ListView):
 class AlbumDetailView(generic.DetailView):
     model = Album
     template_name = 'music/album_detail.html'
-    context_object_name = 'albums'
+

@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% for album in albums  %}  
-        <section>
+    <section>    
+        {% for album in albums  %}  
             <div class="album">
-                <a href="{% url 'album_detail' pk=album.pk %}">
+                <a href="{% url 'album_detail' album.pk %}">
                         <img src="{{ album.cover.url }}">
                         <h3>{{ album.title }}</h3>
                 </a>
             </div>
-        </section>
-    {% endfor %}
+        {% endfor %}
+    </section>
 {% endblock content %}
