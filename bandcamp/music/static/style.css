@@ -61,7 +61,7 @@ nav ul li a:hover {
 main {
     flex-grow: 1;
     max-width: 1300px;
-    margin: 20px auto;
+    margin: 5px 30px;
     padding: 0 20px;
 }
 
@@ -190,48 +190,76 @@ footer p {
 }
 
 .album-detail {
-    display: block;
-    width: 100px;
-    height: 100px;
-    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
-
 
 .album-info {
-    width: 376px;
-    float: left;
-}
-
-/* .album-title {
-    margin-right: 7em;
-} */
-
-/* .album-cover {
     display: flex;
     flex-direction: column;
-    align-items: center;
-} */
+    align-items: flex-start;
+}
 
 .album-cover img {
-    max-width: 50%;
+    max-width: 300px;
     height: auto;
 }
 
-/* .release-info {
-    margin-top: 10px;
-    text-align: left;
+.album-title {
+    font-size: 24px;
+    margin-top: 0px;
 }
 
+.release-info {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.release-type {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.release-date {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+
 .songs {
-    flex-grow: 1;
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.songs h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .song-item {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .song-title {
-    margin-right: 10px; 
-} */
+    font-size: 16px;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.audio-title {
+    list-style: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.audio {
+    list-style: none;
+}

@@ -1,15 +1,25 @@
 {% extends 'base.html' %}
-{% block title %}{{ album }} | {{ block.super }}{% endblock title %}
+
+{% block title %}{{ album.title }} | {{ block.super }}{% endblock title %}
+
 {% block content %}
     <div class="album-detail">
         <div class="album-info">
             <div class="album-cover">
-                <h1 class="album-title">{{ album }}</h1>
-                <img src="{{ album.cover.url }}">
+                <h1 class="album-title">{{ album.title }}</h1>
+                <img src="{{ album.cover.url }}" alt="{{ album.title }} Cover">
             </div>
             <ul class="release-info">
-                <li>Release Date: {{ album.release_date }}</li>
-                <li>Release Type: {{ album.release.type }}</li>
+                <li class="release-type">
+                    {% if album.realese_type == 1 %}
+                        Single
+                    {% elif album.realese_type == 2 %}
+                        EP
+                    {% elif album.realese_type == 3 %}
+                        Album
+                    {% endif %}    
+                </li>
+                <li class="release-date">Release Date: {{ album.release_date }}</li>
             </ul>
         </div>
         <div class="songs">
@@ -18,7 +28,14 @@
                 {% for song in album.songs.all %}
                     <li class="song-item">
                         <span class="song-title">{{ song.title }}</span>
-                        <span class="song-duration">{{ song.duration }}</span>
+                        <span class="audio">
+                            <audio controls>
+                            {% if song.audio %}
+                                <source src="{{ song.audio.url }}" type="audio/mp3">
+                            {% endif %}
+                            Your browser does not support the audio element.
+                            </audio>
+                        </span>
                     </li>
                 {% endfor %}
             </ul>
