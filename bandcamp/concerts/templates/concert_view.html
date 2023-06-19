@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %} Concerts | {{ block.super }}{% endblock title %}
 {% load concert_tags %}
 {% block content %}
 {% comment %} <p>Sum of Visible Concerts: {{ concerts|sum_visible }}</p>
@@ -9,9 +10,9 @@
         <h3>Stay tunned!<h3>
     </span>
 {% else %}
-<ul>
+<ul class='concerts'>
 {% for concert in concerts %}
-    {% if concert.visible == True %}<li>{{concert.date}} {{concert.city}} {{concert.venue}} {% if concert.ticket_status == 2 %}<a href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</li>{% endif %}
+    {% if concert.visible == True %}<li class='concert-line'><div class='concert-date'>{{concert.date}}</div> <div class='concert-place'><h2>{{concert.venue}}</h2> <h3>{{concert.city}}</h3></div> <div id="concert-tickets-{{ concert.ticket_status }}">{% if concert.ticket_status == 2 %}<a class='box' href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</li>{% endif %}
 {% endfor %}
 </ul>
 {% endif %}
