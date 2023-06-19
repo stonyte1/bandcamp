@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 {% load concert_tags %}
 {% block content %}
-<p>Sum of Visible Concerts: {{ concerts|sum_visible }}</p>
-<p>sum of all concerts {{concerts.count}}</p>
+{% comment %} <p>Sum of Visible Concerts: {{ concerts|sum_visible }}</p>
+<p>sum of all concerts {{concerts.count}}</p> {% endcomment %}
 {% if concerts|sum_visible == 0  %}
-    <h2>There are no upcoming concerts !</h2>
-    <h3>Stay tunned</h3>
+    <div class='no-concerts'>
+        <h2>There are no upcoming concerts</h2>
+        <h3>Stay tunned!</h3>
+    </div>
 {% else %}
 <ul>
 {% for concert in concerts %}
