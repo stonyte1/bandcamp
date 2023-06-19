@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section>    
+        {% for merch in merchs  %}  
+            <div class="merch">
+                {% if merch.album %}
+                    <a href="{% url 'album_detail' merch.album.pk %}">
+                {% else %}
+                    <a href="{% url 'merch_detail' merch.pk %}">
+                {% endif %}
+                    <img src="{{ merch.picture.url }}">
+                    <h3>{{ merch.name }}</h3>
+                    <p>{{ merch.category }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    </section>
+{% endblock content %}

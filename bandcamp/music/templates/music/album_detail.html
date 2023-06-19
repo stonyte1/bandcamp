@@ -20,6 +20,18 @@
                     {% endif %}    
                 </li>
                 <li class="release-date">Release Date: {{ album.release_date }}</li>
+                {% for merch in album.merches.all %}
+                <li class="merch-info">
+                    <span class="merch-category">{{ merch.category }}</span>
+                </li>
+                <li class="merch-info">
+                    Price: <span class="merch-price">{{ merch.price }} &euro;</span>
+                </li>
+                <li class="merch-info">
+                    <span class="merch-description">{{ merch.description }}</span>
+                </li>
+                {% endfor %}
+
             </ul>
         </div>
         <div class="songs">
