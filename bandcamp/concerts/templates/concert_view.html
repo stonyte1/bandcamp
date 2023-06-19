@@ -4,10 +4,10 @@
 {% comment %} <p>Sum of Visible Concerts: {{ concerts|sum_visible }}</p>
 <p>sum of all concerts {{concerts.count}}</p> {% endcomment %}
 {% if concerts|sum_visible == 0  %}
-    <div class='no-concerts'>
-        <h2>There are no upcoming concerts</h2>
-        <h3>Stay tunned!</h3>
-    </div>
+    <span class='no-concerts'>
+        <h2 class='no-c'>There are no upcoming concerts<h2>
+        <h3>Stay tunned!<h3>
+    </span>
 {% else %}
 <ul>
 {% for concert in concerts %}
