@@ -2,11 +2,13 @@
 {% load embed_video_tags %}
 {% block title %} Blog | {{ block.super }}{% endblock title %}
 {% block content %}
-<p>hello world</p>
 {% for blog in blogpost %}
-<p>{{blog.title}}</p>
-<p>{{blog.content}}</p>
-<p>{% video blog.video 'tiny' %}</p>
-<p>{{blog.created_at}}</p>
+    <div class='blog-post'>
+        <h3 class='blog-title'>{{blog.title}}</h3>
+        {% if blog.summary %}<p class='blog-summary'>{{blog.summary}}</p>{% endif %}
+        {% if blog.video %}<p class='blog-video'>{% video blog.video 'tiny' %}</p>{% endif %}
+        {% if blog.picture %}<p class='blog-picture'><img src="{{ blog.picture.url }}">{% endif %}
+        <p>{{blog.created_at}}</p>
+    </div>
 {% endfor %}
 {% endblock content %}
