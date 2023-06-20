@@ -21,15 +21,18 @@
                 </li>
                 <li class="release-date">Release Date: {{ album.release_date }}</li>
                 {% for merch in album.merches.all %}
-                <li class="merch-info">
-                    <span class="merch-category">{{ merch.category }}</span>
-                </li>
-                <li class="merch-info">
-                    Price: <span class="merch-price">{{ merch.price }} &euro;</span>
-                </li>
-                <li class="merch-info">
-                    <span class="merch-description">{{ merch.description }}</span>
-                </li>
+                <div class="merch-details">
+                    <div class="merch-category">
+                        <span>{{ merch.category }}</span>
+                    </div>
+                    <div class="merch-price">
+                        Price: <span>{{ merch.price }} &euro;</span>
+                    </div>
+                </div>
+            <div class="album-description">
+                <h2>Description</h2>
+                <p>{{ merch.description }}</p>
+            </div>
                 {% endfor %}
 
             </ul>
