@@ -1,0 +1,12 @@
+<h1 class="title">Create Venue</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="id_city">City:</label>
+        {{ form.city }}
+    </div>
+    <div>
+        <label for="id_name">Venue's Name:</label>
+        {{ form.name}}
+    <button type="submit">Create</button>
+</form>
