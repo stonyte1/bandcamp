@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ merch.name }} | {{ block.super }}{% endblock title %}
+
+{% block content %}
+    <div class="merch-detail">
+        <div class="merch-info">
+            <h1 class="merch-title">{{ merch.name }}</h1>
+            <div class="merch-image">
+                <img src="{{ merch.picture.url }}" alt="{{ merch.name }} Image">
+            </div>
+            <div class="merch-details">
+                <div class="merch-category">
+                    <span>{{ merch.category }}</span>
+                </div>
+                <div class="merch-price">
+                    Price: <span>{{ merch.price }} &euro;</span>
+                </div>
+            </div>
+        </div>
+        <div class="merch-description">
+            <h2>Description</h2>
+            <p>{{ merch.description }}</p>
+        </div>
+    </div>
+
+{% endblock content %}
