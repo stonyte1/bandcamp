@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="title">Update Album</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="id_title">Title:</label>
+            {{ form.title }}
+        </div>
+        <div>
+            <label for="id_cover">Cover:</label>
+            {{ form.cover }}
+        </div>
+        <div>
+            <label for="id_release_date">Release Date:</label>
+            {{ form.release_date }}
+        </div>
+        <div> 
+            <label for="id_summary">Summary:</label>
+            {{ form.summary }}
+        </div>
+        <div>
+            <label for="id_realese_type">Release Type:</label>
+            {{ form.realese_type }}
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-danger" name="delete">Delete Album</button>
+    </form>
+{% endblock content %}

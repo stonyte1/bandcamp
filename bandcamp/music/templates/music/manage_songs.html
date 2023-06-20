@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="title">Add Song
+    </h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="id_title">Title:</label>
+            {{ form.title }}
+        </div>
+        <div>
+            <label for="id_audio">Audio:</label>
+            {{ form.audio }}
+        </div>
+        <div>
+            <label for="id_duration">Duration:</label>
+            {{ form.duration }}
+        </div>
+        <div>
+            <label for="id_album">Album:</label>
+            {{ form.album }}
+        </div>
+        <button type="submit">Create</button>
+    </form>
+{% endblock content %}

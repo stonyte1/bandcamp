@@ -29,12 +29,14 @@
                         Price: <span>{{ merch.price }} &euro;</span>
                     </div>
                 </div>
-            <div class="album-description">
-                <h2>Description</h2>
-                <p>{{ merch.description }}</p>
-            </div>
+                <div class="album-description">
+                    <h2>Description</h2>
+                    <p>{{ merch.description }}</p>
+                    <div class="add-song">
+                        <a href="{% url 'album_update' album.pk %}" class="add-song-button">Update Album</a>
+                    </div>
+                </div>
                 {% endfor %}
-
             </ul>
         </div>
         <div class="songs">
@@ -52,7 +54,13 @@
                             </audio>
                         </span>
                     </li>
+                    <div class="add-song">
+                        <a href="{% url 'song_update' song.pk %}" class="add-song-button">Update Song</a>
+                    </div>
                 {% endfor %}
+                <div class="add-song">
+                    <a href="{% url 'song_form' album.pk %}" class="add-song-button">Add Song</a>
+                </div>
             </ul>
         </div>
     </div>

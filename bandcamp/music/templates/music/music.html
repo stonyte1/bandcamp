@@ -9,5 +9,10 @@
                 </a>
             </div>
         {% endfor %}
+        <div class="add-album">
+            <a href="{% url 'album_form'%}" class="add-album-button">
+                <h2 class="add-album-title">Add new album</h2>
+            </a>
+        </div>
     </section>
 {% endblock content %}

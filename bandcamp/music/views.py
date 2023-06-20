@@ -1,13 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
-from django.forms.models import BaseModelForm
-from .models import Album
-from .forms import AlbumForm
-from django.contrib import messages
-from django.core.files import File
-
-
-
+from django.urls import reverse_lazy
+from .models import Album, Song
+from .forms import AlbumForm, SongForm
+from django.forms import formset_factory, BaseFormSet
 
 def home(request):
     return render(request, 'music/home.html')
@@ -17,16 +13,31 @@ def album(request):
         form = AlbumForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            title = form.cleaned_data.get('title')
-            messages.success(request, f'Album {title} added')
             return redirect('music')
         else:
-            # Print form errors to the console
             print(form.errors)
     else:
         form = AlbumForm
 
     return render(request, 'music/manage_album.html', {'form': form})
+
+def song(request, pk):
+    album = get_object_or_404(Album, pk=pk)
+
+    if request.method == 'POST':
+        form = SongForm(request.POST, request.FILES)
+        if form.is_valid():
+            song = form.save(commit=False)
+            song.album = album
+            song.save()
+            return redirect('album_detail', pk=pk)
+        else:
+            print(form.errors)
+    else:
+        form = SongForm()
+
+    return render(request, 'music/manage_songs.html', {'form': form})
+
 
 class AlbumList(generic.ListView):
     model = Album
@@ -37,5 +48,65 @@ class AlbumDetailView(generic.DetailView):
     model = Album
     template_name = 'music/album_detail.html'
 
+class AlbumUpdateDeleteView(generic.UpdateView):
+    model = Album
+    template_name = 'music/album_update.html'
+    success_url = reverse_lazy('music') 
+    form_class = AlbumForm
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        album = self.get_object()
+        context['album'] = album
+        return context
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):  
+        if 'delete' in request.POST:
+            return self.delete(request, *args, **kwargs)
+        else:
+            return super().post(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        album = self.get_object()
+        album.delete()
+        return redirect(self.success_url)
+
+    def get_object(self, queryset=None):
+        queryset = self.get_queryset()
+        obj = get_object_or_404(queryset, pk=self.kwargs['pk'])
+        return obj
+
+class SongUpdateDeleteView(generic.UpdateView):
+    model = Song
+    template_name = 'music/song_update.html'
+    success_url = reverse_lazy('music') 
+    form_class = SongForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        song = self.get_object()
+        context['song'] = song
+        return context
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs): 
+        if 'delete' in request.POST:
+            return self.delete(request, *args, **kwargs)
+        else:
+            return super().post(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        song = self.get_object()
+        song.delete()
+        return redirect(self.success_url)
+
+    def get_object(self, queryset=None):
+        queryset = self.get_queryset()
+        obj = get_object_or_404(queryset, pk=self.kwargs['pk'])
+        return obj
 

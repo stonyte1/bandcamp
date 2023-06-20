@@ -10,11 +10,11 @@ class AlbumForm(forms.ModelForm):
             'release_date': forms.DateInput(attrs={'type': 'date'})
         }
 
-# class SongForm(forms.ModelForm):
+class SongForm(forms.ModelForm):
     
-#     class Meta:
-#         model = Song
-#         fields = ['title', 'audio', 'duartion', 'album']
+    class Meta:
+        model = Song
+        fields = ['title', 'audio', 'duration', 'album']
 
 
  
