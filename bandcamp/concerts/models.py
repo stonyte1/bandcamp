@@ -19,6 +19,13 @@ class ConcertCity(models.Model):
 
 class ConcertVenue(models.Model):
     name = models.CharField(_("name"), max_length=250)
+    city = models.ForeignKey(
+        ConcertCity,
+        verbose_name=_("city"), 
+        on_delete=models.CASCADE,
+        related_name='concert_venues',
+        null=True, blank=True
+    )
     
     class Meta:
         verbose_name = _("concert venue")

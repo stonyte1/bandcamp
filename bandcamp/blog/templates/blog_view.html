@@ -2,13 +2,16 @@
 {% load embed_video_tags %}
 {% block title %} Blog | {{ block.super }}{% endblock title %}
 {% block content %}
+{% if user.is_staff %}New post{% endif %}
+<div class="container">
 {% for blog in blogpost %}
     <div class='blog-post'>
         <h3 class='blog-title'>{{blog.title}}</h3>
         {% if blog.summary %}<p class='blog-summary'>{{blog.summary}}</p>{% endif %}
         {% if blog.video %}<p class='blog-video'>{% video blog.video 'tiny' %}</p>{% endif %}
         {% if blog.picture %}<p class='blog-picture'><img src="{{ blog.picture.url }}">{% endif %}
-        <p>{{blog.created_at}}</p>
+        <p class='blog-date'>{{blog.created_at}}</p>
     </div>
 {% endfor %}
+</div>
 {% endblock content %}
