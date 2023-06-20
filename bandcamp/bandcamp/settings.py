@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'music',
     'concerts',
     'merch',
+    'embed_video',
+    'blog',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
