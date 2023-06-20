@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% block title %} Blog | {{ block.super }}{% endblock title %}
+{% block content %}
+<p>hello world</p>
+{% for blog in blogpost %}
+<p>{{blog.title}}</p>
+<p>{{blog.content}}</p>
+<p>{% video blog.video 'tiny' %}</p>
+<p>{{blog.created_at}}</p>
+{% endfor %}
+{% endblock content %}
