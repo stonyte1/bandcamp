@@ -14,10 +14,14 @@ li {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #3892b7;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: transparent;
+    background-image: url("music/image/back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header {
@@ -115,7 +119,7 @@ h3 {
     height: 90%;
     display: inline-block;
     padding: 16px 16px;
-    background-color: #c86b4e;
+    background-color: #e28048;
     border-radius: 4px;
     transition: background-color 0.3s;
     text-decoration: none;
