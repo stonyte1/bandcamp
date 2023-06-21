@@ -39,17 +39,21 @@ class ConcertVenue(models.Model):
 
 
 class Concert(models.Model):
+    city_name = models.CharField(_("city name"), max_length=50, null=True, blank=True)
+    venue_name = models.CharField(_("venue name"), max_length=100, null=True, blank=True)
     city = models.ForeignKey(
         ConcertCity,
         verbose_name=_("city"), 
         on_delete=models.CASCADE,
-        related_name='concerts'
+        related_name='concerts',
+        null=True, blank=True
     )
     venue = models.ForeignKey(
         ConcertVenue, 
         verbose_name=_("venue"), 
         on_delete=models.CASCADE,
         related_name='concerts',
+        null=True, blank=True
     )
     date= models.DateField(_("date"), default=None)
     STATUS_CHOICES = (

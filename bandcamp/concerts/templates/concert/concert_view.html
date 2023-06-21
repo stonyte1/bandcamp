@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Concerts | {{ block.super }}{% endblock title %}
+{% load concert_tags %}
+{% block content %}
+{% if user.is_staff %}
+    <h3><a href="{% url 'create_concerts' %}">create new event</a></h3>
+    <h2>Visible events</h2>
+    <hr>
+{% endif %}
+{% if concerts|sum_visible == 0 %}
+    {% if user.is_not_staff %}
+        <span class='no-concerts'>
+            <h2 class='no-c'>There are no upcoming concerts<h2>
+            <h3>Stay tunned!<h3>
+        </span>
+    {% endif %}
+{% else %}
+<ul class='concerts'>
+{% for concert in concerts %}
+    {% if concert.visible == True %}
+        <li class='concert-line'><div class='concert-date'>{{concert.date}}</div> <div class='concert-place'><h2>{{concert.venue_name}}</h2> <h3>{{concert.city_name}}</h3></div> <div id="concert-tickets-{{ concert.ticket_status }}">{% if concert.ticket_status == 2 %}<a class='box' href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</div>{% if user.is_staff %}<div class="edit-delete"><a href="{% url 'concert_update' concert.pk %}" class="add-song-button">Update event</a></div>{% endif %}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+{% endif %}
+{% if user.is_staff %}
+    <h2>Hidden events</h2>
+    <hr>
+    <div class='concert-hidden'>
+    <ul class='concerts'>
+    {% for concert in concerts %}
+        {% if concert.visible == False %}
+            <li class='concert-line'><div class='concert-date'>{{concert.date}}</div> <div class='concert-place'><h2>{{concert.venue_name}}</h2> <h3>{{concert.city_name}}</h3></div> <div id="concert-tickets-{{ concert.ticket_status }}">{% if concert.ticket_status == 2 %}<a class='box' href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</div>{% if user.is_staff %}<div class="edit-delete"><a href="{% url 'concert_update' concert.pk %}" class="add-song-button">Update event</a></div>{% endif %}</li>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endif %}
+{% endblock content %}
