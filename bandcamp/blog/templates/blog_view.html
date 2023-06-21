@@ -2,7 +2,11 @@
 {% load embed_video_tags %}
 {% block title %} Blog | {{ block.super }}{% endblock title %}
 {% block content %}
-{% if user.is_staff %}New post{% endif %}
+{% if user.is_staff %}
+<div class="add-post">
+    <a href="{% url 'blog_post_form'%}" class="add-post-button">New Post</a>
+</div>
+{% endif %}
 <div class="container">
 {% for blog in blogpost %}
     <div class='blog-post'>
@@ -12,6 +16,11 @@
         {% if blog.picture %}<p class='blog-picture'><img src="{{ blog.picture.url }}">{% endif %}
         <p class='blog-date'>{{blog.created_at}}</p>
     </div>
+    {% if user.is_staff %}
+    <div class="add-song">
+        <a href="{% url 'blog_post_update' blog.pk %}" class="add-song-button">Update Post</a>
+    </div>
+    {% endif %}
 {% endfor %}
 </div>
 {% endblock content %}

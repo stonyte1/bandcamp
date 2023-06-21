@@ -14,5 +14,12 @@
                 </a>
             </div>
         {% endfor %}
+        {% if user.is_staff %}
+        <div class="add-album">
+            <a href="{% url 'merch_form'%}" class="add-album-button">
+                <h2 class="add-album-title">Add new merch</h2>
+            </a>
+        </div>
+        {% endif %}
     </section>
 {% endblock content %}

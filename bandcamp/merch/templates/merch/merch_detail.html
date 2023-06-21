@@ -16,6 +16,11 @@
                 <div class="merch-price">
                     Price: <span>{{ merch.price }} &euro;</span>
                 </div>
+                {% if user.is_staff %}
+                <div class="add-song">
+                    <a href="{% url 'merch_update' merch.pk %}" class="add-song-button">Update Merch</a>
+                </div>
+                {% endif %}
             </div>
         </div>
         <div class="merch-description">
