@@ -32,9 +32,11 @@
                 <div class="album-description">
                     <h2>Description</h2>
                     <p>{{ merch.description }}</p>
+                    {% if user.is_staff %}
                     <div class="add-song">
                         <a href="{% url 'album_update' album.pk %}" class="add-song-button">Update Album</a>
                     </div>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </ul>
@@ -54,13 +56,17 @@
                             </audio>
                         </span>
                     </li>
+                    {% if user.is_staff %}
                     <div class="add-song">
                         <a href="{% url 'song_update' song.pk %}" class="add-song-button">Update Song</a>
                     </div>
+                    {% endif %}
                 {% endfor %}
+                {% if user.is_staff %}
                 <div class="add-song">
                     <a href="{% url 'song_form' album.pk %}" class="add-song-button">Add Song</a>
                 </div>
+                {% endif %}
             </ul>
         </div>
     </div>

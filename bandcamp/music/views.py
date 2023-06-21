@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.views import generic
 from django.urls import reverse_lazy
 from .models import Album, Song
 from .forms import AlbumForm, SongForm
-from django.forms import formset_factory, BaseFormSet
 
 def home(request):
     return render(request, 'music/home.html')
 
+@login_required
 def album(request):
     if request.method == 'POST':
         form = AlbumForm(request.POST, request.FILES)
@@ -18,9 +20,9 @@ def album(request):
             print(form.errors)
     else:
         form = AlbumForm
-
     return render(request, 'music/manage_album.html', {'form': form})
 
+@login_required
 def song(request, pk):
     album = get_object_or_404(Album, pk=pk)
 
@@ -48,7 +50,7 @@ class AlbumDetailView(generic.DetailView):
     model = Album
     template_name = 'music/album_detail.html'
 
-class AlbumUpdateDeleteView(generic.UpdateView):
+class AlbumUpdateDeleteView(generic.UpdateView, LoginRequiredMixin):
     model = Album
     template_name = 'music/album_update.html'
     success_url = reverse_lazy('music') 
@@ -79,7 +81,7 @@ class AlbumUpdateDeleteView(generic.UpdateView):
         obj = get_object_or_404(queryset, pk=self.kwargs['pk'])
         return obj
 
-class SongUpdateDeleteView(generic.UpdateView):
+class SongUpdateDeleteView(generic.UpdateView, LoginRequiredMixin):
     model = Song
     template_name = 'music/song_update.html'
     success_url = reverse_lazy('music') 

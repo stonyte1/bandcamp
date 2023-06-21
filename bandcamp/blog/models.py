@@ -6,7 +6,6 @@ from django.urls import reverse
 
 class BlogPost(models.Model):
     title = models.CharField(_("title"), max_length=50)
-    summary = models.TextField(_("summary"), null=True, blank=True)
     content = models.TextField(_("content"))
     video = EmbedVideoField(_("video"), null=True, blank=True)
     picture = models.ImageField(_("picture"),null=True, blank=True, upload_to='pictures/')
