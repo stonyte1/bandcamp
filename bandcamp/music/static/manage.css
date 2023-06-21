@@ -29,7 +29,8 @@ select {
 
 button {
     padding: 10px 20px;
-    background-color: #4eb3df;;
+    background-color: #4eb3df;
+    ;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -94,31 +95,13 @@ button:hover {
     color: #8c8282;
 }
 
-.post-choice {
-    margin-bottom: 10px;
-    font-size: larger;
-}
 
-.add-post {
-    display: flex;
-    align-items: center;
-    margin-left: 50px;
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 25px;
+    transform: rotate(45deg);
+    /* will make it look like x */
+    cursor: pointer;
 }
-
-.add-post-button {
-    display: flex;
-    width: 6%;
-    background-color: #4eb3df;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    align-items: center;
-    margin-top: 5px;
-}
-
-.add-post-button:hover {
-    background-color: #4eb3df;
-}
-
