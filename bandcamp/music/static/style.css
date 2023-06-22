@@ -21,7 +21,7 @@ body {
     background-color: transparent;
     background-image: url("music/image/back.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;;
 }
 
 header {
@@ -61,7 +61,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color:#006281;
 }
 
 main {
@@ -81,7 +81,7 @@ section {
 h1,
 h2,
 h3 {
-    color: #333;
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -113,7 +113,7 @@ h3 {
 }
 
 .album a {
-    color:  #3892b7;
+    color:  #e28048;
     text-decoration: none;
     width: 90%;
     height: 90%;
@@ -130,11 +130,11 @@ h3 {
     right: auto;
     text-align: left;
     margin-top: 20px;
-    color: #777;
+    color: #e28048;
 }
 
 .album a:hover {
-    background-color: #ddd;
+    background-color: white;
 }
 
 .show {
@@ -199,7 +199,7 @@ footer p {
 }
 
 .social-media-icons li a:hover {
-    color: #000000;
+    color:  #e28048;
 }
 
 .album-detail {
@@ -212,6 +212,7 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    
 }
 
 .album-cover img {
@@ -234,11 +235,12 @@ footer p {
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
+    color: white;
 }
 
 .release-date {
     font-size: 14px;
-    color: #888;
+    color: #e28048;
     margin-top: 5px;
     margin-bottom: 20px;
 }
@@ -267,6 +269,8 @@ footer p {
     margin-bottom: 5px;
     text-align: left;
     margin-left: 20px;
+    color: white;
+    font-weight: bold;
 }
 
 .audio {
@@ -352,8 +356,6 @@ footer p {
 }
 .merch-description { 
     position: absolute;
-    right: 100px;
-    text-align: right;
 }
 
 .merch-image img {
@@ -365,14 +367,14 @@ footer p {
 .merch-category {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: white;
 }
 
 .merch-price {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     margin-top: 5px;
-    color: #777;
+    color: #e28048;
 }
 
 .merch-description h2 {

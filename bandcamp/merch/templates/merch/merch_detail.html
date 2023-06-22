@@ -16,16 +16,16 @@
                 <div class="merch-price">
                     Price: <span>{{ merch.price }} &euro;</span>
                 </div>
+                <div class="merch-description">
+                    <h2>Description</h2>
+                    <p>{{ merch.description }}</p>
+                </div>
                 {% if user.is_staff %}
                 <div class="add-song">
-                    <a href="{% url 'merch_update' merch.pk %}" class="add-song-button">Update Merch</a>
+                    <a href="{% url 'merch_update' merch.pk %}" class="update-merch-button">Update Merch</a>
                 </div>
                 {% endif %}
             </div>
-        </div>
-        <div class="merch-description">
-            <h2>Description</h2>
-            <p>{{ merch.description }}</p>
         </div>
     </div>
 

@@ -48,14 +48,25 @@ button:hover {
 
 .add-song-button {
     display: inline-block;
-    background-color: #4eb3df;
+    background-color: #e28048;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
     align-items: right;
-    margin-top: 5px;
+}
+
+.update-merch-button {
+    display: inline-block;
+    background-color: #e28048;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    align-items: right;
+    margin-top: 80px;
 }
 
 .add-song-button:hover {
@@ -63,7 +74,7 @@ button:hover {
 }
 
 .add-album {
-    background-color: #fff;
+    background-color: #e28048;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: calc(33.33% - 150px);
@@ -85,14 +96,14 @@ button:hover {
     align-items: center;
     justify-content: center;
     padding: 16px 16px;
-    background-color: #f5f5f5;
+    background-color:#e28048;
     border-radius: 4px;
     transition: background-color 0.3s;
     text-decoration: none;
 }
 
 .add-album-title {
-    color: #8c8282;
+    color: white;
 }
 
 
