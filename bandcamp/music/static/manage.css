@@ -55,6 +55,7 @@ button:hover {
     border-radius: 4px;
     transition: background-color 0.3s ease;
     align-items: right;
+    margin-left: 20px;
 }
 
 .update-merch-button {
@@ -70,12 +71,12 @@ button:hover {
 }
 
 .add-song-button:hover {
-    background-color: #4eb3df;
+    background-color: #00749b;
 }
 
 .add-album {
     background-color: #e28048;
-    border-radius: 4px;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: calc(33.33% - 150px);
     margin-right: 20px;
@@ -91,13 +92,13 @@ button:hover {
     color: #333;
     text-decoration: none;
     width: 90%;
-    height: 90%;
+    height: 91%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 16px 16px;
     background-color:#e28048;
-    border-radius: 4px;
+    border-radius: 20px;
     transition: background-color 0.3s;
     text-decoration: none;
 }
@@ -106,6 +107,9 @@ button:hover {
     color: white;
 }
 
+.add-album a:hover {
+    background-color: #00749b;
+}
 
 .close {
     position: absolute;
