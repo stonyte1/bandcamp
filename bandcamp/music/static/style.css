@@ -65,7 +65,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color:#006281;
+    background-color: #006281;
 }
 
 main {
@@ -91,7 +91,7 @@ h3 {
 
 
 .album {
-    background-color:white;
+    background-color: white;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: calc(33.33% - 150px);
@@ -117,7 +117,7 @@ h3 {
 }
 
 .album a {
-    color:  #e28048;
+    color: #e28048;
     text-decoration: none;
     width: 90%;
     height: 91%;
@@ -130,7 +130,7 @@ h3 {
 }
 
 
-.album-description { 
+.album-description {
     right: auto;
     text-align: left;
     margin-top: 20px;
@@ -203,7 +203,7 @@ footer p {
 }
 
 .social-media-icons li a:hover {
-    color:  #e28048;
+    color: #e28048;
 }
 
 .album-detail {
@@ -217,14 +217,14 @@ footer p {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
-    background-color:#e28048;
+    background-color: #e28048;
     border: 1px solid white;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     height: 50%;
-  }
-  
+}
+
 
 .album-cover img {
     max-width: 300px;
@@ -314,7 +314,8 @@ footer p {
 
 .merch img {
     width: 100%;
-    height: auto; /* Remove fixed height to maintain aspect ratio */
+    height: auto;
+    /* Remove fixed height to maintain aspect ratio */
     object-fit: cover;
     border-radius: 4px;
 }
@@ -331,15 +332,15 @@ footer p {
 
 .merch a {
     color: #333;
-  text-decoration: none;
-  width: 90%;
-  height: 93%;
-  display: inline-block;
-  padding: 16px 16px;
-  background-color: #e28048;
-  border-radius: 20px;
-  transition: background-color 0.3s;
-  text-decoration: none;
+    text-decoration: none;
+    width: 90%;
+    height: 93%;
+    display: inline-block;
+    padding: 16px 16px;
+    background-color: #e28048;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    text-decoration: none;
 
 }
 
@@ -359,7 +360,7 @@ footer p {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
-    background-color:#e28048;
+    background-color: #e28048;
     border: 1px solid white;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -412,12 +413,14 @@ footer p {
     justify-content: flex-start;
     padding-top: 10px;
     padding-bottom: 25px;
-    border-top-width: 4px;
-    border-top-style: solid;
-    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+    margin-bottom: 30px;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-color: white;
+    border-radius: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background: linear-gradient(90deg, rgba(85, 224, 255, 0.261) 0%, rgb(255, 255, 255) 20%);
+    background: linear-gradient(86deg, rgba(226, 128, 72, 1) 0%, rgba(226, 128, 72, 0.31985294117647056) 44%, rgba(226, 128, 72, 0.8352591036414566) 66%, rgba(226, 128, 72, 0.12097338935574231) 100%);
 
 }
 
@@ -440,12 +443,13 @@ div[id^="concert-tickets-"] {
     align-items: center;
     justify-content: center;
     width: 15%;
-    border-width: 5px;
+    border-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+    border-color: white;
+    border-radius: 20px;
     text-decoration: none;
     color: #ffffff;
-    background-color: rgb(25, 201, 228);
+    background-color: rgba(226, 128, 72, 1);
     letter-spacing: 3px;
 
 }
@@ -485,4 +489,11 @@ div[id^="concert-tickets-"] :hover {
 #concert-tickets-4 {
     color: black;
     background-color: rgba(25, 201, 228, 0.149);
+}
+
+.fa,
+.fas {
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
 }
