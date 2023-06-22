@@ -167,6 +167,7 @@ button:hover {
     background-color: #4eb3df;
 }
 
+
 .fas-album {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -175,19 +176,19 @@ button:hover {
     font-variant: normal;
     text-rendering: auto;
     line-height: 1;
-    /* margin-left: 5px; */
     align-items: flex-end;
     align-items: right;
-    /* margin-block-end: auto; */
     font-weight: 400;
     font-size: 25px;
     color: white;
     font-family: "Font Awesome 5 Free";
     font-weight: 500;
+    transition: font-size 0.3s;
 }
 
 .fas-album:hover {
     color: #00749b;
+    font-size: 30px;
 }
 
 input[type="file" i] {
