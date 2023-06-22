@@ -1,3 +1,4 @@
+
 form {
     width: 400px;
     margin: 0 auto;
@@ -10,6 +11,23 @@ div {
 label {
     display: block;
     font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+
+.background-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #e28048;
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: 50%;
+    width: 37%;
 }
 
 input[type="text"],
@@ -29,16 +47,15 @@ select {
 
 button {
     padding: 10px 20px;
-    background-color: #4eb3df;
-    ;
+    background-color:#00749b;
     color: #fff;
-    border: none;
+    border: solid white;
     border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #4eb3df;
+    background-color:  black;
 }
 
 .title {
@@ -53,6 +70,7 @@ button:hover {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 4px;
+    border: solid white;
     transition: background-color 0.3s ease;
     align-items: right;
     margin-left: 20px;
@@ -147,4 +165,43 @@ button:hover {
 
 .add-post-button:hover {
     background-color: #4eb3df;
+}
+
+.fas-album {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    /* margin-left: 5px; */
+    align-items: flex-end;
+    align-items: right;
+    /* margin-block-end: auto; */
+    font-weight: 400;
+    font-size: 25px;
+    color: white;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 500;
+}
+
+.fas-album:hover {
+    color: #00749b;
+}
+
+input[type="file" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    align-items: baseline;
+    color: white;
+    text-overflow: ellipsis;
+    white-space-collapse: preserve;
+    text-wrap: nowrap;
+    text-align: start !important;
+    padding: initial;
+    border: initial;
+    overflow: hidden !important;
+
 }
