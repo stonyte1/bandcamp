@@ -3,8 +3,12 @@
 {% load concert_tags %}
 {% block content %}
 {% if user.is_staff %}
-    <h3><a href="{% url 'create_concerts' %}">create new event</a></h3>
-    <h2>Visible events</h2>
+    <section>
+        <div  class='add-album'>
+            <a class='add-album-button' href="{% url 'create_concerts' %}"><h3 class='add-album-title'>Create new event</h3></a>
+        </div>
+    </section>
+    <h2 class='visible-hidden'>Visible events</h2>
     <hr>
 {% endif %}
 {% if concerts|sum_visible == 0 %}
@@ -24,13 +28,13 @@
 </ul>
 {% endif %}
 {% if user.is_staff %}
-    <h2>Hidden events</h2>
+    <h2 class='visible-hidden'>Hidden events</h2>
     <hr>
     <div class='concert-hidden'>
     <ul class='concerts'>
     {% for concert in concerts %}
         {% if concert.visible == False %}
-            <li class='concert-line'><div class='concert-date'>{{concert.date}}</div> <div class='concert-place'><h2>{{concert.venue_name}}</h2> <h3>{{concert.city_name}}</h3></div> <div id="concert-tickets-{{ concert.ticket_status }}">{% if concert.ticket_status == 2 %}<a class='box' href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</div>{% if user.is_staff %}<div class="edit-delete"><a href="{% url 'concert_update' concert.pk %}" class="add-song-button">Update event</a></div>{% endif %}</li>
+            <li class='concert-line'><div class='concert-date'>{{concert.date}}</div> <div class='concert-place'><h2>{{concert.venue_name}}</h2> <h3>{{concert.city_name}}</h3></div> <div id="concert-tickets-{{ concert.ticket_status }}">{% if concert.ticket_status == 2 %}<a class='box' href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</div>{% if user.is_staff %}<div class="edit-delete"><a href="{% url 'concert_update' concert.pk %}"><i class="fas">&#xf044;</i></a></div>{% endif %}</li>
         {% endif %}
     {% endfor %}
     </div>
