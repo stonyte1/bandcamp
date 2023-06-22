@@ -9,6 +9,11 @@
     </div>
 </section>
 {% endif %}
+{% if messages %}
+    {% for message in messages %}
+    <p class="box box-{{ message.tags }}">{{ message }}</p>
+{% endfor %}
+{% endif %}
 <div class="container">
 {% for blog in blogpost %}
     <div class='blog-post'>
