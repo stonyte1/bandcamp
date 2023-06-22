@@ -12,6 +12,7 @@ li {
     padding: 0;
 }
 
+html,
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -23,10 +24,6 @@ body {
     background-size: 100% auto;
     background-attachment: fixed;
     background-position: center;
-}
-
-html,
-body {
     margin: 0;
     padding: 0;
 }
@@ -68,7 +65,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color:#006281;
 }
 
 main {
@@ -88,14 +85,14 @@ section {
 h1,
 h2,
 h3 {
-    color: #333;
+    color: white;
     margin-bottom: 10px;
 }
 
 
 .album {
-    background-color: #3892b7;
-    border-radius: 4px;
+    background-color:white;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: calc(33.33% - 150px);
     margin-right: 20px;
@@ -120,28 +117,28 @@ h3 {
 }
 
 .album a {
-    color: #3892b7;
+    color:  #e28048;
     text-decoration: none;
     width: 90%;
-    height: 90%;
+    height: 91%;
     display: inline-block;
     padding: 16px 16px;
     background-color: #e28048;
-    border-radius: 4px;
+    border-radius: 20px;
     transition: background-color 0.3s;
     text-decoration: none;
 }
 
-.album-description {
-    position: absolute;
+
+.album-description { 
     right: auto;
     text-align: left;
     margin-top: 20px;
-    color: #777;
+    color: white;
 }
 
 .album a:hover {
-    background-color: #ddd;
+    background-color: #00749b;
 }
 
 .show {
@@ -206,7 +203,7 @@ footer p {
 }
 
 .social-media-icons li a:hover {
-    color: #000000;
+    color:  #e28048;
 }
 
 .album-detail {
@@ -219,7 +216,15 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
+    padding: 20px;
+    background-color:#e28048;
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: auto;
+  }
+  
 
 .album-cover img {
     max-width: 300px;
@@ -241,11 +246,12 @@ footer p {
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
+    color: white;
 }
 
 .release-date {
     font-size: 14px;
-    color: #888;
+    color: white;
     margin-top: 5px;
     margin-bottom: 20px;
 }
@@ -274,6 +280,8 @@ footer p {
     margin-bottom: 5px;
     text-align: left;
     margin-left: 20px;
+    color: white;
+    font-weight: bold;
 }
 
 .audio {
@@ -361,8 +369,6 @@ footer p {
 
 .merch-description {
     position: absolute;
-    right: 100px;
-    text-align: right;
 }
 
 .merch-image img {
@@ -374,14 +380,14 @@ footer p {
 .merch-category {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: white;
 }
 
 .merch-price {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     margin-top: 5px;
-    color: #777;
+    color: white;
 }
 
 .merch-description h2 {
