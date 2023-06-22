@@ -28,6 +28,7 @@ label {
     margin-bottom: 20px;
     height: 50%;
     width: 37%;
+    margin-top: 20px;
 }
 
 input[type="text"],
@@ -204,5 +205,20 @@ input[type="file" i] {
     padding: initial;
     border: initial;
     overflow: hidden !important;
+    margin-top: 5px;
+}
 
+input[type="date" i] {
+    font-family: monospace;
+    padding-inline-start: 1px;
+    cursor: default;
+    align-items: center;
+    display: inline-flex;
+    overflow: hidden;
+    padding: 0px;
+}
+
+a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
 }

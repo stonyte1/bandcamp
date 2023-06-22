@@ -81,7 +81,7 @@ class AlbumUpdateDeleteView(generic.UpdateView, LoginRequiredMixin):
         obj = get_object_or_404(queryset, pk=self.kwargs['pk'])
         return obj
 
-class SongUpdateDeleteView(generic.UpdateView, LoginRequiredMixin):
+class SongUpdateView(generic.UpdateView, LoginRequiredMixin):
     model = Song
     template_name = 'music/song_update.html'
     success_url = reverse_lazy('music') 

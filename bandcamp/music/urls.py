@@ -8,5 +8,5 @@ urlpatterns = [
     path('music/form/', views.album, name='album_form'),
     path('music/<int:pk>/song/', views.song, name='song_form'),
     path('music/<int:pk>/update/', views.AlbumUpdateDeleteView.as_view(), name='album_update'),
-    path('music/song/<int:pk>', views.SongUpdateDeleteView.as_view(), name='song_update')
+    path('music/song/<int:pk>', views.SongUpdateView.as_view(), name='song_update')
 ]

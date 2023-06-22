@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="background-block">
     <h1 class="title">Create Album</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
@@ -25,4 +26,5 @@
         </div>
         <button type="submit">Create</button>
     </form>
+</div>
 {% endblock content %}

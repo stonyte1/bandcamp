@@ -26,6 +26,7 @@ body {
     background-position: center;
     margin: 0;
     padding: 0;
+    color: white;
 }
 
 header {
@@ -351,7 +352,7 @@ footer p {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .merch-info {

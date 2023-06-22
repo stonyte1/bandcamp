@@ -141,19 +141,19 @@ div[id^="concert-tickets-"] :hover {
 
 .concert-line:hover #concert-tickets-1,
 .concert-line:hover div[id^="concert-tickets-"] .box {
-    background-color: rgb(0, 116, 155, 0.8)
+    background-color: #00749b;
 }
 
-.concert-line:hover div[id^="concert-tickets-"] {
-    background-color: rgba(122, 122, 122, 0.8);
-}
-
-.concert-line:hover #concert-tickets-4 {
-    background-color: rgba(237, 14, 14, 0.5);
-    color: white;
-}
-
-.concert-line:hover #concert-tickets-3 {
-    background-color: rgba(237, 14, 14, 0.5);
-    color: white;
+.no-concerts {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #e28048;
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 439px;
+    height: 50%;
+    width: 37%;
 }
