@@ -11,9 +11,9 @@
 {% for blog in blogpost %}
     <div class='blog-post'>
         <h3 class='blog-title'>{{blog.title}}</h3>
-        {% if blog.summary %}<p class='blog-summary'>{{blog.summary}}</p>{% endif %}
         {% if blog.video %}<p class='blog-video'>{% video blog.video 'tiny' %}</p>{% endif %}
         {% if blog.picture %}<p class='blog-picture'><img src="{{ blog.picture.url }}">{% endif %}
+        {% if blog.content %}<p class='blog-summary'>{{blog.content}}</p>{% endif %}
         <p class='blog-date'>{{blog.created_at}}</p>
     </div>
     {% if user.is_staff %}
