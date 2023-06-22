@@ -222,7 +222,7 @@ footer p {
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    height: auto;
+    height: 50%;
   }
   
 
@@ -298,8 +298,8 @@ footer p {
 }
 
 .merch {
-    background-color: #fff;
-    border-radius: 4px;
+    background-color: #e28048;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: calc(25% - 30px);
     margin-right: 20px;
@@ -308,42 +308,43 @@ footer p {
     vertical-align: top;
     position: relative;
     overflow: hidden;
-    height: calc(40% - 20px);
+    /* Remove the fixed height and adjust padding/margin as needed */
+    box-sizing: border-box;
 }
 
 .merch img {
     width: 100%;
-    height: 100%;
-    /* Set a specific height for all the images */
+    height: auto; /* Remove fixed height to maintain aspect ratio */
     object-fit: cover;
     border-radius: 4px;
 }
 
 .merch h3 {
     font-size: 20px;
-    margin-bottom: 0.5px;
+    margin-bottom: 5px;
 }
 
 .merch p {
-    margin-bottom: 5px;
+    margin-bottom: 0;
+    color: white;
 }
 
 .merch a {
     color: #333;
-    text-decoration: none;
-    width: 90%;
-    height: 93%;
-    display: inline-block;
-    padding: 16px 16px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-    text-decoration: none;
+  text-decoration: none;
+  width: 90%;
+  height: 93%;
+  display: inline-block;
+  padding: 16px 16px;
+  background-color: #e28048;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+  text-decoration: none;
 
 }
 
 .merch a:hover {
-    background-color: #ddd;
+    background-color: #00749b;
 }
 
 .merch-detail {
@@ -357,18 +358,18 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-right: 50px;
-    width: 50%;
-    height: 25%;
+    padding: 20px;
+    background-color:#e28048;
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: auto;
 }
 
 .merch-title {
     font-size: 24px;
     margin-top: 0px;
-}
-
-.merch-description {
-    position: absolute;
 }
 
 .merch-image img {
@@ -397,9 +398,8 @@ footer p {
 
 .merch-description p {
     font-size: 18px;
-    line-height: 1.4;
-    color: #777;
-    text-align: right;
+    color: white;
+    text-align: left;
 }
 
 .concerts {
