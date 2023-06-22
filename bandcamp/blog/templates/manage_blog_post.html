@@ -2,7 +2,7 @@
 {% block content %}
 <div class="background-block">
     <h1 class="title">Create Post</h1>
-    <form method="POST" enctype="multipart/form">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div>
             <label for="id_title">Title:</label>
@@ -12,11 +12,11 @@
             <label for="id_content">Content:</label>
             {{ form.content }}
         </div>
+        <div class="post-choice">Enter video or picture</div>
         <div>
             <label for="id_video">Video:</label>
             {{ form.video }}
         </div>
-        <div class="post-choice">Enter video or picture</div>
         <div>
             <label for="id_picture">Picture:</label>
             {{ form.picture }}
