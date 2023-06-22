@@ -22,7 +22,7 @@
 <ul class='concerts'>
 {% for concert in concerts %}
     {% if concert.visible == True %}
-        <li class='concert-line'><div class='concert-date'>{{concert.date}}</div> <div class='concert-place'><h2>{{concert.venue_name}}</h2> <h3>{{concert.city_name}}</h3></div> <div id="concert-tickets-{{ concert.ticket_status }}">{% if concert.ticket_status == 2 %}<a class='box' href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</div>{% if user.is_staff %}<div class="edit-delete"><a href="{% url 'concert_update' concert.pk %}"><i class="fas">&#xf044;</i></i></a></div>{% endif %}</li>
+        <li class='concert-line'><div class='concert-date'>{{concert.date}}</div> <div class='concert-place'><h2>{{concert.venue_name}}</h2> <h3>{{concert.city_name}}</h3></div> <div id="concert-tickets-{{ concert.ticket_status }}">{% if concert.ticket_status == 2 or concert.ticket_status == 1 %}<a class='box' href="{{concert.link}}" target="_blank">{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</div>{% if user.is_staff %}<div class="edit-delete"><a href="{% url 'concert_update' concert.pk %}"><i class="fas">&#xf044;</i></i></a></div>{% endif %}</li>
     {% endif %}
 {% endfor %}
 </ul>
@@ -34,7 +34,7 @@
     <ul class='concerts'>
     {% for concert in concerts %}
         {% if concert.visible == False %}
-            <li class='concert-line'><div class='concert-date'>{{concert.date}}</div> <div class='concert-place'><h2>{{concert.venue_name}}</h2> <h3>{{concert.city_name}}</h3></div> <div id="concert-tickets-{{ concert.ticket_status }}">{% if concert.ticket_status == 2 %}<a class='box' href={{concert.link}}>{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</div>{% if user.is_staff %}<div class="edit-delete"><a href="{% url 'concert_update' concert.pk %}"><i class="fas">&#xf044;</i></a></div>{% endif %}</li>
+            <li class='concert-line'><div class='concert-date'>{{concert.date}}</div> <div class='concert-place'><h2>{{concert.venue_name}}</h2> <h3>{{concert.city_name}}</h3></div> <div id="concert-tickets-{{ concert.ticket_status }}">{% if concert.ticket_status == 2 or concert.ticket_status == 1 %}<a class='box' href="{{concert.link}}" target="_blank">{{concert.get_ticket_status_display}}</a>{% else %}{{concert.get_ticket_status_display}}{% endif %}</div>{% if user.is_staff %}<div class="edit-delete"><a href="{% url 'concert_update' concert.pk %}"><i class="fas">&#xf044;</i></a></div>{% endif %}</li>
         {% endif %}
     {% endfor %}
     </div>
