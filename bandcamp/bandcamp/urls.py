@@ -20,11 +20,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('music.urls')),
-    path('', include('concerts.urls')),
-    path('', include('merch.urls')),
-    path('', include('blog.urls')),
-    path('', include('moderator.urls')),
+    path('music/', include('music.urls')),
+    path('concerts/', include('concerts.urls')),
+    path('merch/', include('merch.urls')),
+    path('bog/', include('blog.urls')),
+    path('moderator/', include('moderator.urls')),
     path('admin/', admin.site.urls),
 ] + (static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))

@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 
 @login_required
-def blog_post(request):
+def create_blog_post(request):
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -20,7 +20,6 @@ def blog_post(request):
     else:
         form = BlogPostForm
     return render(request, 'manage_blog_post.html', {'form': form})
-
 
 class BlogPostListView(generic.ListView):
     model = BlogPost

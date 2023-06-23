@@ -13,8 +13,6 @@ class ConcertListView(generic.ListView):
     template_name = "concert/concert_view.html"
     context_object_name = 'concerts'
 
-
-
 class ConcertCreateView(LoginRequiredMixin, generic.CreateView):
     model = Concert
     form_class = ConcertForm
@@ -30,8 +28,6 @@ class ConcertCreateView(LoginRequiredMixin, generic.CreateView):
             return self.form_invalid(form)
 
         return super().form_valid(form)
-
-    
 
 class ConcertUpdateDeleteView(LoginRequiredMixin, generic.UpdateView):
     model = Concert

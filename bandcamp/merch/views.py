@@ -9,7 +9,7 @@ from .models import Merch
 from .forms import MerchForm
 
 @login_required
-def merch(request):
+def create_merch(request):
     if request.method == 'POST':
         form = MerchForm(request.POST, request.FILES)
         if form.is_valid():
