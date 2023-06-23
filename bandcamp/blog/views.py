@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from . models import BlogPost
 from . forms import BlogPostForm
 from django.views import generic
+from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 @login_required
 def blog_post(request):

@@ -9,20 +9,32 @@
     </div>
 </section>
 {% endif %}
+{% if messages %}
+    {% for message in messages %}
+    <p class="box box-{{ message.tags }}">{{ message }}</p>
+{% endfor %}
+{% endif %}
 <div class="container">
 {% for blog in blogpost %}
     <div class='blog-post'>
-        <h3 class='blog-title'>{{blog.title}}</h3>
+        <section class="blog-title-edit">
+            <h3 class='blog-title'>{{blog.title}}</h3>
+            {% if user.is_staff %}
+                <div class="edit-delete">
+                    <a href="{% url 'blog_post_update' blog.pk %}">
+                        <i class="fas">&#xf044;</i>
+                    </a>
+                </div>
+            {% endif %}
+        </section>
         {% if blog.video %}<p class='blog-video'>{% video blog.video 'tiny' %}</p>{% endif %}
         {% if blog.picture %}<p class='blog-picture'><img src="{{ blog.picture.url }}">{% endif %}
-        {% if blog.content %}<p class='blog-summary'>{{blog.content}}</p>{% endif %}
+        <div class='summary-date'>
+        <p class='blog-summary'>{{blog.content}}</p>
         <p class='blog-date'>{{blog.created_at}}</p>
+        </div>
     </div>
-    {% if user.is_staff %}
-    <div class="add-song">
-        <a href="{% url 'blog_post_update' blog.pk %}" class="update-merch-button">Update Post</a>
-    </div>
-    {% endif %}
+
 {% endfor %}
 </div>
 {% endblock content %}
