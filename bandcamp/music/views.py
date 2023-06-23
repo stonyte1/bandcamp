@@ -10,7 +10,7 @@ def home(request):
     return render(request, 'music/home.html')
 
 @login_required
-def album(request):
+def create_album(request):
     if request.method == 'POST':
         form = AlbumForm(request.POST, request.FILES)
         if form.is_valid():
@@ -23,7 +23,7 @@ def album(request):
     return render(request, 'music/manage_album.html', {'form': form})
 
 @login_required
-def song(request, pk):
+def create_song(request, pk):
     album = get_object_or_404(Album, pk=pk)
 
     if request.method == 'POST':
